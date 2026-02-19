@@ -30,7 +30,7 @@
 
     <!-- qsb -->
     <dimen name="all_apps_search_bar_bottom_padding">36dp</dimen>
-    <dimen name="all_apps_search_vertical_offset">30dp</dimen> <!-- -12 for Google Pixel, 30 elsewhere -->
+    <dimen name="all_apps_search_vertical_offset">30dp</dimen>
     <dimen name="qsb_g_icon_marginStart">16dp</dimen>
     <dimen name="qsb_icon_padding">10dp</dimen>
     <dimen name="qsb_margin_top_adjusting">20dp</dimen>
@@ -61,7 +61,7 @@
     <dimen name="search_result_text_height">52dp</dimen>
     <dimen name="search_result_subtitle_padding_start">4dp</dimen>
 
-    <dimen name="all_apps_header_top_margin">64dp</dimen> <!-- 22 for Google Pixel, 64 elsewhere -->
+    <dimen name="all_apps_header_top_margin">64dp</dimen>
 
     <!-- smartspace -->
     <dimen name="smartspaceAmbientShadowBlur">1.5dp</dimen>

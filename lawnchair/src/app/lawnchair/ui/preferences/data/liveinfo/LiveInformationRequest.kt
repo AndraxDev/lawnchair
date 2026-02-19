@@ -13,21 +13,17 @@ import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import retrofit2.create
 
-private val retrofit = Retrofit.Builder()
-    .baseUrl("https://lawnchair.app/")
-    .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
-    .build()
+// private val retrofit = Retrofit.Builder()
+//     .baseUrl("https://lawnchair.app/")
+//     .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
+//     .build()
+//
+// val liveInformationService: LiveInformationService = retrofit.create()
 
-val liveInformationService: LiveInformationService = retrofit.create()
-
-suspend fun getLiveInformation(): LiveInformation = withContext(Dispatchers.IO) {
+suspend fun getLiveInformation(): LiveInformation? = withContext(Dispatchers.IO) {
     // This port and modification does not depend on the official versions so
     // all announcements have been disabled.
-    return@withContext LiveInformation(
-        version = 2,
-        announcements = listOf(),
-        features = mapOf()
-    )
+    return@withContext null
     // try {
     //     val response: Response<ResponseBody> = liveInformationService.getLiveInformation()
     //
