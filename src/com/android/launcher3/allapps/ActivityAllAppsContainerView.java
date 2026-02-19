@@ -1275,7 +1275,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
             }
             setPadding(grid.allAppsLeftRightMargin, topPadding, grid.allAppsLeftRightMargin, 0);
         }
-        InsettableFrameLayout.dispatchInsets(this, insets);
+        // InsettableFrameLayout.dispatchInsets(this, insets);
     }
 
     /**

@@ -151,7 +151,7 @@ fun About(
                             onClick = {},
                             onLongClick = {
                                 val commitUrl =
-                                    "https://github.com/LawnchairLauncher/lawnchair/commit/${BuildConfig.COMMIT_HASH}"
+                                    "https://github.com/AndraxDev/lawnchair/commit/${BuildConfig.COMMIT_HASH}"
                                 context.startActivity(Intent(Intent.ACTION_VIEW, commitUrl.toUri()))
                             },
                         ),
@@ -214,6 +214,16 @@ fun About(
             items = uiState.supportAndPr,
             isFirstChild = false,
             heading = { stringResource(id = R.string.support_and_pr) },
+            key = { _, it -> it.name },
+        ) { _, it ->
+            ContributorRow(
+                member = it,
+            )
+        }
+        preferenceGroupItems(
+            items = uiState.modifications,
+            isFirstChild = false,
+            heading = { stringResource(R.string.modifications) },
             key = { _, it -> it.name },
         ) { _, it ->
             ContributorRow(

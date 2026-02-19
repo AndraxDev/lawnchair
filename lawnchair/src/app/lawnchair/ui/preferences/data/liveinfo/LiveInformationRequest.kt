@@ -20,23 +20,30 @@ private val retrofit = Retrofit.Builder()
 
 val liveInformationService: LiveInformationService = retrofit.create()
 
-suspend fun getLiveInformation(): LiveInformation? = withContext(Dispatchers.IO) {
-    try {
-        val response: Response<ResponseBody> = liveInformationService.getLiveInformation()
-
-        if (response.isSuccessful) {
-            val responseBody = response.body()?.string() ?: return@withContext null
-
-            val liveInformation = Json.decodeFromString<LiveInformation>(responseBody)
-            Log.v("LiveInformation", "getLiveInformation: $liveInformation")
-
-            return@withContext liveInformation
-        } else {
-            Log.d("LiveInformation", "getLiveInformation: response code ${response.code()}")
-            return@withContext null
-        }
-    } catch (e: Exception) {
-        Log.e("LiveInformation", "getLiveInformation: Error during news retrieval: ${e.message}")
-        return@withContext null
-    }
+suspend fun getLiveInformation(): LiveInformation = withContext(Dispatchers.IO) {
+    // This port and modification does not depend on the official versions so
+    // all announcements have been disabled.
+    return@withContext LiveInformation(
+        version = 2,
+        announcements = listOf(),
+        features = mapOf()
+    )
+    // try {
+    //     val response: Response<ResponseBody> = liveInformationService.getLiveInformation()
+    //
+    //     if (response.isSuccessful) {
+    //         val responseBody = response.body()?.string() ?: return@withContext null
+    //
+    //         val liveInformation = Json.decodeFromString<LiveInformation>(responseBody)
+    //         Log.v("LiveInformation", "getLiveInformation: $liveInformation")
+    //
+    //         return@withContext liveInformation
+    //     } else {
+    //         Log.d("LiveInformation", "getLiveInformation: response code ${response.code()}")
+    //         return@withContext null
+    //     }
+    // } catch (e: Exception) {
+    //     Log.e("LiveInformation", "getLiveInformation: Error during news retrieval: ${e.message}")
+    //     return@withContext null
+    // }
 }

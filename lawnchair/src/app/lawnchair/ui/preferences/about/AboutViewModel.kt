@@ -46,6 +46,7 @@ class AboutViewModel(
                 supportAndPr = supportAndPr,
                 topLinks = topLinks,
                 bottomLinks = bottomLinks,
+                modifications = modifications,
             )
         }
 
@@ -227,6 +228,11 @@ class AboutViewModel(
                 labelResId = R.string.x_twitter,
                 url = "https://x.com/lawnchairapp",
             ),
+            Link(
+                iconResId = R.drawable.ic_sysbar_quick_settings,
+                labelResId = R.string.modifications,
+                url = "https://github.com/AndraxDev/lawnchair",
+            ),
         )
 
         private val supportAndPr = listOf(
@@ -248,6 +254,17 @@ class AboutViewModel(
                 photoUrl = "https://avatars.githubusercontent.com/u/29402532",
                 socialUrl = "https://x.com/rikkoedoot",
             ),
+        )
+
+        private val modifications = listOf(
+            TeamMember(
+                name = "Dmytro Ostapenko (AndraxDev)",
+                role = Role.Development,
+                photoUrl = "https://andrax.dev/photo.webp",
+                socialUrl = "https://www.linkedin.com/in/andraxdev/",
+                githubUsername = "andraxdev",
+                ContributorStatus.Active
+            )
         )
     }
 }
