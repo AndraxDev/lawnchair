@@ -337,7 +337,7 @@ private fun CornerSlider(
                     modifier = Modifier
                         .height(24.dp)
                         .weight(1f)
-                        .padding(horizontal = 3.dp),
+                        .padding(horizontal = 2.dp),
                 )
             }
         },

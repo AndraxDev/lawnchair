@@ -60,7 +60,7 @@ fun PreferenceGroup(
     heading: String? = null,
     description: String? = null,
     showDescription: Boolean = true,
-    itemSpacing: Dp = 4.dp,
+    itemSpacing: Dp = 2.dp,
     content: @Composable PreferenceGroupScope.() -> Unit,
 ) {
     Column(

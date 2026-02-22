@@ -55,8 +55,7 @@ fun LazyListScope.preferenceGroupItems(
             if (showDividers && it > 0) {
                 HorizontalDivider(
                     modifier = Modifier,
-//                        .padding(start = dividerStartIndent + 16.dp, end = dividerEndIndent + 16.dp)
-                    thickness = 3.dp,
+                    thickness = 2.dp,
                     color = MaterialTheme.colorScheme.surface,
                 )
             }
@@ -98,8 +97,8 @@ fun PreferenceGroupItem(
     content: @Composable () -> Unit,
 ) {
     val shape = remember(cutTop, cutBottom) {
-        val top = if (cutTop) 0.dp else 28.dp
-        val bottom = if (cutBottom) 0.dp else 28.dp
+        val top = if (cutTop) 4.dp else 28.dp
+        val bottom = if (cutBottom) 4.dp else 28.dp
         RoundedCornerShape(top, top, bottom, bottom)
     }
     Surface(

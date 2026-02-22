@@ -73,7 +73,7 @@ fun LawnchairLink(
             colorFilter = ColorFilter.tint(color = LocalContentColor.current),
             modifier = Modifier.size(24.dp),
         )
-        Spacer(modifier = Modifier.requiredHeight(4.dp))
+        Spacer(modifier = Modifier.requiredHeight(2.dp))
         Text(
             text = label,
             style = MaterialTheme.typography.bodyMedium,

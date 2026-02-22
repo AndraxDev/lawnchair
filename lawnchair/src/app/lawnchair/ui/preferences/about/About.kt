@@ -158,29 +158,30 @@ fun About(
                 )
             }
         }
-        item {
-            Spacer(modifier = Modifier.height(8.dp))
-        }
-        item {
-            UpdateSection(
-                updateState = uiState.updateState,
-                onInstall = {
-                    viewModel.installUpdate(it)
-                },
-                onForceInstall = {
-                    viewModel.installUpdate(it, forceInstall = true)
-                },
-                onViewChanges = {
-                    openBottomSheet = true
-                    scope.launch {
-                        sheetState.show()
-                    }
-                },
-                onDismissMajorUpdate = {
-                    viewModel.resetToDownloaded(it)
-                },
-            )
-        }
+        // Modified version does not support official update channel
+        // item {
+        //     Spacer(modifier = Modifier.height(8.dp))
+        // }
+        // item {
+        //     UpdateSection(
+        //         updateState = uiState.updateState,
+        //         onInstall = {
+        //             viewModel.installUpdate(it)
+        //         },
+        //         onForceInstall = {
+        //             viewModel.installUpdate(it, forceInstall = true)
+        //         },
+        //         onViewChanges = {
+        //             openBottomSheet = true
+        //             scope.launch {
+        //                 sheetState.show()
+        //             }
+        //         },
+        //         onDismissMajorUpdate = {
+        //             viewModel.resetToDownloaded(it)
+        //         },
+        //     )
+        // }
         item {
             Spacer(modifier = Modifier.requiredHeight(16.dp))
         }
@@ -259,7 +260,7 @@ fun About(
             }
         }
         item {
-            Spacer(Modifier.height(3.dp))
+            Spacer(Modifier.height(2.dp))
         }
         item {
             PreferenceGroupItem(
