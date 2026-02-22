@@ -259,9 +259,9 @@ fun About(
                 )
             }
         }
-        item {
-            Spacer(Modifier.height(2.dp))
-        }
+        // item {
+        //     Spacer(Modifier.height(2.dp))
+        // }
         item {
             PreferenceGroupItem(
                 cutTop = true,

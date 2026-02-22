@@ -17,6 +17,7 @@
 package app.lawnchair.ui.preferences.components.layout
 
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.lazy.LazyItemScope
@@ -67,7 +68,7 @@ fun LazyListScope.preferenceGroupItems(
 inline fun <T> LazyListScope.preferenceGroupItems(
     items: List<T>,
     isFirstChild: Boolean,
-    showDividers: Boolean = true,
+    showDividers: Boolean = false,
     noinline heading:
     @Composable()
     (() -> String)? = null,
@@ -101,6 +102,7 @@ fun PreferenceGroupItem(
         val bottom = if (cutBottom) 4.dp else 28.dp
         RoundedCornerShape(top, top, bottom, bottom)
     }
+    Spacer(modifier = Modifier.height(if (cutTop) 2.dp else 0.dp))
     Surface(
         modifier = modifier.padding(horizontal = 16.dp),
         shape = shape,
