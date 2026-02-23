@@ -1273,9 +1273,12 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
                 topPadding += getResources().getDimensionPixelSize(
                         R.dimen.all_apps_additional_top_padding_floating_search);
             }
-            setPadding(grid.allAppsLeftRightMargin, topPadding, grid.allAppsLeftRightMargin, 0);
+            // Sets padding in root container (not window)
+            // setPadding(grid.allAppsLeftRightMargin, topPadding, grid.allAppsLeftRightMargin, 0);
         }
-        // InsettableFrameLayout.dispatchInsets(this, insets);
+        
+        // Sets padding in the window
+        InsettableFrameLayout.dispatchInsets(this, insets);
     }
 
     /**
