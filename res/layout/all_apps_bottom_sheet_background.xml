@@ -21,7 +21,8 @@
     <View
         android:id="@+id/bottom_sheet_handle_area"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/bottom_sheet_handle_area_height" />
+        android:layout_height="@dimen/bottom_sheet_handle_area_height"
+        android:visibility="gone" />
 
     <View
         android:id="@+id/bottom_sheet_handle"
@@ -31,5 +32,5 @@
         android:layout_marginTop="@dimen/bottom_sheet_handle_margin"
         android:layout_marginBottom="@dimen/bottom_sheet_handle_margin"
         android:background="@drawable/bg_rounded_corner_bottom_sheet_handle"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 </FrameLayout>
